@@ -12,7 +12,7 @@
     crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="assets/style/main.css">
   <link rel="stylesheet" href="assets/style/style.css">
-  <title>triviatime</title>
+  <title>TriviaTime</title>
 </head>
 
 <body>
@@ -22,7 +22,7 @@
       <a class="navbar-brand" href="#">
         <img src="https://codeworks.blob.core.windows.net/public/assets/img/cw-mark.png" height="45" alt=""
           loading="lazy">
-        <span class="ml-2">triviatime</span>
+        <span class="ml-2">TriviaTime</span>
       </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
         aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -40,7 +40,17 @@
 
   <!-- SECTION -->
   <main>
-      <!-- <section id="router-view"></section> -->
+    <div class="container-fluid">
+      <section class="row">
+        <div class="col-12 my-2">
+          <h2 class="text-center text-secondary fs-4">Categories</h2>
+          <div id="categories" class="d-flex flex-wrap gap-2">
+          </div>
+        </div>
+      </section>
+      <section id="questions" class="row my-3">
+      </section>
+    </div>
   </main>
 
   <!-- SECTION -->
