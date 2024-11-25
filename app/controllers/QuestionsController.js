@@ -1,14 +1,23 @@
-import { questionsService } from "../services/QuestionsService.js";
+import { AppState } from '../AppState.js';
+import { questionsService } from '../services/QuestionsService.js';
 
 
 
 
 export class QuestionsController {
   constructor() {
-    console.log('🎰🎲');
+    this.getQuestions;
   }
 
-  async getQuestions()(
-    await questionsService.getQuestions()
-  )
+  async getQuestions() {
+    await questionsService.getQuestions();
+    this.drawQuestions();
+  }
+
+  drawQuestions() {
+    const questionsHTML = AppState.questions
+      .map(q => q.cardHTMLTemplate)
+      .join('');
+    document.getElementById('questions').innerHTML = questionsHTML;
+  }
 }
