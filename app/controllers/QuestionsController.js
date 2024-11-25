@@ -1,3 +1,4 @@
+import { questionsService } from "../services/QuestionsService.js";
 
 
 
@@ -7,5 +8,7 @@ export class QuestionsController {
     console.log('🎰🎲');
   }
 
-  async load
+  async getQuestions()(
+    await questionsService.getQuestions()
+  )
 }
