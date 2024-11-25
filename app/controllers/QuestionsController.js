@@ -2,8 +2,10 @@
 
 
 
-export class TriviaController {
+export class QuestionsController {
   constructor() {
     console.log('🎰🎲');
   }
+
+  async load
 }

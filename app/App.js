@@ -6,7 +6,7 @@ class App {
 
   //HomeController = new HomeController()
 
-  TriviaController = new TriviaController()
+  QuestionsController = new QuestionsController()
   constructor() {
     if (USE_ROUTER) {
       this.router = router

@@ -1,7 +1,7 @@
 
 
 
-export class Trivia {
+export class Question {
   constructor(data) {
 
   }
