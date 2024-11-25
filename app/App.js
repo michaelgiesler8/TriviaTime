@@ -4,8 +4,9 @@ const USE_ROUTER = false
 
 class App {
 
-  HomeController = new HomeController()
+  //HomeController = new HomeController()
 
+  TriviaController = new TriviaController()
   constructor() {
     if (USE_ROUTER) {
       this.router = router
