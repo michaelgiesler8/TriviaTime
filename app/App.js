@@ -1,21 +1,11 @@
-import { router } from './router-config.js';
-import { HomeController } from './controllers/HomeController.js';
-const USE_ROUTER = false
+import { CategoriesController } from './controllers/CategoriesController.js';
+import { QuestionsController } from './controllers/QuestionsController.js';
 
 class App {
-
-  //HomeController = new HomeController()
-
-  QuestionsController = new QuestionsController()
   constructor() {
-    if (USE_ROUTER) {
-      this.router = router
-      this.router.init(this)
-    }
+    this.CategoriesController = new CategoriesController();
+    this.QuestionsController = new QuestionsController();
   }
-
 }
 
-const app = new App()
-// @ts-ignore
-window.app = app
+window.app = new App();
