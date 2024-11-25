@@ -4,8 +4,13 @@ import { Question } from '../models/Question.js';
 
 class QuestionsService {
   async getQuestions() {
-    const response = await triviaApi.get('?amount=10');
-    AppState.questions = response.data.results.map(q => new QuestionsService(q));
+    try {
+      const response = await triviaApi.get('/api.php?amount=20');
+      AppState.questions = response.data.results.map(q => new Question(q));
+    } catch (error) {
+      console.error('Error fetching trivia questions:', error);
+      throw new Error('Unable to fetch questions');
+    }
   }
 
   async getQuestionsByCategory() {

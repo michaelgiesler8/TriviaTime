@@ -1,9 +1,4 @@
-import axios from 'axios';
-import dotenv from 'dotenv';
-
-dotenv.config();
-
 export const triviaApi = axios.create({
-  baseUrl: process.env.TRIVIA_API_URL,
+  baseUrl: 'https://opentdb.com/api.php?amount=20',
   timeout: 5000
 });
