@@ -1,10 +1,15 @@
-import { AppState } from "../AppState.js";
-import { Example } from "../models/Example.js";
+import { triviaAPI } from './AxiosService.js';
+import { AppState } from '../AppState.js';
+import { Category } from '../models/Category.js';
 
-class ExamplesService {
-  addMessage(message) {
-    AppState.examples.push(new Example(message))
+class CategoriesService {
+  async getCategories() {
+    const response = await triviaAPI.get('/api_category.php');
+    AppState.categories = response.data.trivia_categories.map(cat = new Category(cat));
   }
-}
 
-export const examplesService = new ExamplesService()
+  setActiveCategory(categoryId) {
+    AppState.activeCategory = AppState.categories.find(cat => cat.id === categoryId);
+  }
+
+  export const categoriesService = new CategoriesService();
